@@ -1,0 +1,4 @@
+/\* /index.html 200
+
+<!-- The _redirects file is used when deploying the app to a service like Netlify or other hosting platforms that support redirect rules. -->
+ <!-- _redirects file is a rule for redirecting all requests to the index.html file with a status code 200 -->
