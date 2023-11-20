@@ -13,11 +13,16 @@ const Contact = () => {
             eveniet tempore?
           </p>
 
-          <form className="contact-form">
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/mjvqdlaq"
+            method="POST"
+          >
             <input
               type="email"
               className="form-input"
               placeholder="Enter Email"
+              name="email"
             />
             <button type="submit" className="submit-btn">
               Subscribe
