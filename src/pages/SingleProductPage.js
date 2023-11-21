@@ -54,7 +54,7 @@ const SingleProductPage = () => {
     id: sku,
     company,
     images,
-  } = product;
+  } = product; //destructure the product details, displays them usually JSX
 
   return (
     <Wrapper>
@@ -85,7 +85,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart />}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
