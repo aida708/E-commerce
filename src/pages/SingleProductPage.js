@@ -43,9 +43,24 @@ const SingleProductPage = () => {
   if (error) {
     return <Error />;
   }
-  console.log(product);
+  // console.log(product);
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    id: sku,
+    company,
+    images,
+  } = product;
 
-  return <h4>single product page</h4>;
+  return (
+    <Wrapper>
+      <PageHero title={name} />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.main`
