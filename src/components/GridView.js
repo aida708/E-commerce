@@ -30,6 +30,7 @@ const Wrapper = styled.section`
   .products-container {
     display: grid;
     gap: 2rem 1.5rem;
+    margin: 4rem;
   }
 
   @media (min-width: 992px) {
