@@ -48,16 +48,17 @@ const AddToCart = ({ product }) => {
             );
           })}
         </div>
-        <div className="btn--container">
-          <AmountButtons
-            amount={amount}
-            increase={increase}
-            decrease={decrease}
-          />
-          <Link to="/cart" className="btn">
-            Add to cart
-          </Link>
-        </div>
+      </div>
+      <div className="btn-container">
+        <AmountButtons
+          amount={amount}
+          increase={increase}
+          decrease={decrease}
+        />
+        <br />
+        <Link to="/cart" className="btn">
+          Add to cart
+        </Link>
       </div>
     </Wrapper>
   );
