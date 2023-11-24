@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
@@ -18,14 +19,14 @@ const SingleProductPage = () => {
   const { id } = useParams();
   const history = useHistory();
   const {
-    single_product_url: loading,
+    single_product_loading: loading,
     single_product_error: error,
     single_product: product,
     fetchSingleProduct,
   } = useProductsContext();
 
   useEffect(() => {
-    fetchSingleProduct(`${url} ${id}`);
+    fetchSingleProduct(`${url}${id}`);
   }, [id]);
 
   //return back to the homepage after 3s if there is an error
