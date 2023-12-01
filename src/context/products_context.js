@@ -28,14 +28,12 @@ const ProductsContext = React.createContext();
 
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const { products } = useProductsContext();
 
   const openSidebar = () => {
-    dispatch({ type: "SIDEBAR_OPEN" });
+    dispatch({ type: SIDEBAR_OPEN });
   };
-
   const closeSidebar = () => {
-    dispatch({ type: "SIDEBAR_CLOSE" });
+    dispatch({ type: SIDEBAR_CLOSE });
   };
 
   const fetchProducts = async (url) => {
@@ -48,7 +46,6 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
   };
-
   const fetchSingleProduct = async (url) => {
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
@@ -66,7 +63,12 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     <ProductsContext.Provider
-      value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
+      value={{
+        ...state,
+        openSidebar,
+        closeSidebar,
+        fetchSingleProduct,
+      }}
     >
       {children}
     </ProductsContext.Provider>

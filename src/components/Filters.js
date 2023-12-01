@@ -17,31 +17,32 @@ const Filters = () => {
       shipping,
     },
     updateFilters,
-    clearFilters,
     all_products,
+    clearFilters,
   } = useFilterContext();
 
   const categories = getUniqueValues(all_products, "category");
-  const companies = getUniqueValues(all_products, "companies");
+  const companies = getUniqueValues(all_products, "company");
   const colors = getUniqueValues(all_products, "colors");
-
   return (
     <Wrapper>
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
-          {/* search inpput */}
+          {/* search input */}
           <div className="form-control">
             <input
               type="text"
               name="text"
-              placeholder="search"
-              className="search-input"
               value={text}
+              placeholder="search"
               onChange={updateFilters}
+              className="search-input"
             />
           </div>
+          {/* end of search input */}
+          {/* category */}
           <div className="form-control">
-            <h5>Category</h5>
+            <h5>category</h5>
             <div>
               {categories.map((c, index) => {
                 return (
@@ -60,10 +61,10 @@ const Filters = () => {
               })}
             </div>
           </div>
-          {/* end of categories */}
-          {/* companies */}
+          {/* end of category */}
+          {/* company */}
           <div className="form-control">
-            <h5>Company</h5>
+            <h5>company</h5>
             <select
               name="company"
               value={company}
@@ -79,7 +80,7 @@ const Filters = () => {
               })}
             </select>
           </div>
-          {/* end of companies */}
+          {/* end of company */}
           {/* colors */}
           <div className="form-control">
             <h5>colors</h5>
@@ -100,7 +101,6 @@ const Filters = () => {
                     </button>
                   );
                 }
-
                 return (
                   <button
                     key={index}
@@ -132,8 +132,7 @@ const Filters = () => {
               value={price}
             />
           </div>
-          {/* end of the price */}
-
+          {/* end of price */}
           {/* shipping */}
           <div className="form-control shipping">
             <label htmlFor="shipping">free shipping</label>
@@ -141,11 +140,11 @@ const Filters = () => {
               type="checkbox"
               name="shipping"
               id="shipping"
-              onChange={updateFilters}
               checked={shipping}
+              onChange={updateFilters}
             />
           </div>
-          {/* end of shipping */}
+          {/* end of  shipping */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
@@ -239,7 +238,6 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     column-gap: 0.5rem;
     font-size: 1rem;
-    max-width: 200px;
   }
   .clear-btn {
     background: var(--clr-red-dark);

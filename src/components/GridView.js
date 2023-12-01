@@ -7,15 +7,7 @@ const GridView = ({ products }) => {
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          return (
-            <Product
-              key={product.id}
-              {...product}
-              // name={product.name}
-              // price={product.price}
-              // image={product.image}
-            />
-          );
+          return <Product key={product.id} {...product} />;
         })}
       </div>
     </Wrapper>
@@ -30,7 +22,6 @@ const Wrapper = styled.section`
   .products-container {
     display: grid;
     gap: 2rem 1.5rem;
-    margin: 4rem;
   }
 
   @media (min-width: 992px) {

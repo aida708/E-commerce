@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
@@ -14,7 +13,6 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 const SingleProductPage = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -27,24 +25,23 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
-
-  //return back to the homepage after 3s if there is an error
   useEffect(() => {
     if (error) {
       setTimeout(() => {
         history.push("/");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
-
   if (loading) {
     return <Loading />;
   }
-  // if (error) {
-  //   return <Error />;
-  // }
-  // console.log(product);
+  if (error) {
+    return <Error />;
+  }
+
   const {
     name,
     price,
@@ -55,8 +52,7 @@ const SingleProductPage = () => {
     id: sku,
     company,
     images,
-  } = product; //destructure the product details, displays them usually JSX
-
+  } = product;
   return (
     <Wrapper>
       <PageHero title={name} product />
@@ -72,17 +68,15 @@ const SingleProductPage = () => {
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
-              <span>Available: </span>
+              <span>Available : </span>
               {stock > 0 ? "In stock" : "out of stock"}
             </p>
-
             <p className="info">
-              <span>SKU: </span>
-              {stock}
+              <span>SKU :</span>
+              {sku}
             </p>
-
             <p className="info">
-              <span>Brand: </span>
+              <span>Brand :</span>
               {company}
             </p>
             <hr />

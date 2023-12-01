@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 const CartColumns = () => {
   return (
     <Wrapper>
@@ -10,8 +9,8 @@ const CartColumns = () => {
         <h5>quantity</h5>
         <h5>subtotal</h5>
         <span></span>
-        <hr />
       </div>
+      <hr />
     </Wrapper>
   );
 };

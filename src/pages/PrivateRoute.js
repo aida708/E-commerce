@@ -1,10 +1,14 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
-// will remove later
-import { useUserContext } from '../context/user_context';
+import React from "react";
+// import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const PrivateRoute = () => {
-  return <h4>Private Route</h4>;
+import { useAuth0 } from "@auth0/auth0-react";
+
+const PrivateRoute = ({ children }) => {
+  const { user } = useAuth0();
+  if (!user) {
+    return <Link to="/" />;
+  }
+  return children;
 };
 export default PrivateRoute;

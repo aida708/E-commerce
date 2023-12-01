@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 const Contact = () => {
   return (
     <Wrapper>
@@ -12,20 +11,14 @@ const Contact = () => {
             sint unde quaerat ratione soluta veniam provident adipisci cumque
             eveniet tempore?
           </p>
-
-          <form
-            className="contact-form"
-            action="https://formspree.io/f/mjvqdlaq"
-            method="POST"
-          >
+          <form className="contact-form">
             <input
               type="email"
               className="form-input"
-              placeholder="Enter Email"
-              name="email"
+              placeholder="enter email"
             />
             <button type="submit" className="submit-btn">
-              Subscribe
+              subscribe
             </button>
           </form>
         </div>

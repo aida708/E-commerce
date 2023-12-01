@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heroBcg from "../assets/hero-bcg.jpeg";
 import heroBcg2 from "../assets/hero-bcg-2.jpeg";
-
 const Hero = () => {
   return (
     <Wrapper className="section-center">
@@ -19,7 +18,7 @@ const Hero = () => {
           alias?
         </p>
         <Link to="/products" className="btn hero-btn">
-          Shop now
+          shop now
         </Link>
       </article>
       <article className="img-container">
