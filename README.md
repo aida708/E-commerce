@@ -12,7 +12,6 @@ Get ready to experience the ultimate in comfortable and convenient furniture sho
 
 Live URL - https://ecomerce-aida.netlify.app/
 
-Github Repo - https://lnkd.in/dF6mYxNu
 
 Features
 Responsive and Intuitive UI
